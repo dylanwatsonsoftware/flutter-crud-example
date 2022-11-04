@@ -14,13 +14,13 @@ jobs:
         env:
           GOOGLE_SERVICES_JSON: ${{secrets.GOOGLE_SERVICES_JSON}}
       - run: flutter pub get
-      - run: flutter build apk --debug
+      - run: flutter build apk
       - uses: actions/upload-artifact@v3
         with:
           name: build
-          path: build/
+          path: build/app/outputs
 
       # Run our tests
-      - run: flutter test
+      # - run: flutter test
       # Analyze our Dart code
       # - run: flutter analyze
