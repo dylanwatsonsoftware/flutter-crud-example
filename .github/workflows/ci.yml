@@ -20,7 +20,7 @@ jobs:
           name: build
           path: build/
 
-      # Analyze our Dart code
-      - run: flutter analyze
       # Run our tests
       - run: flutter test
+      # Analyze our Dart code
+      # - run: flutter analyze
