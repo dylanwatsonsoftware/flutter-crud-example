@@ -18,7 +18,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: build
-          path: build/app/outputs
+          path: build/app/outputs/apk/release
 
       # Run our tests
       # - run: flutter test
