@@ -20,6 +20,26 @@ jobs:
           name: build
           path: build/app/outputs/apk/release
 
+      # # sign generated apk
+      # - name: Sign APK
+      #   id: sign_app
+      #   uses: r0adkll/sign-android-release@v1
+      #   with:
+      #     releaseDirectory: android/app/build/outputs/apk/release
+      #     signingKeyBase64: ${{ secrets.ANDROID_KEY_BASE64 }}
+      #     alias: resourceful
+      #     keyStorePassword: ${{ secrets.ANDROID_KEYSTORE_PASS }}
+      #     keyPassword: ${{ secrets.ANDROID_KEYSTORE_PASS }}
+
+      # ## Distribute app to Firebase App Distribution for testing / use google play internal track if you have a google play account
+      # - name: upload artifact to Firebase App Distribution
+      #   uses: wzieba/Firebase-Distribution-Github-Action@v1
+      #   with:
+      #     appId: ${{secrets.FIREBASE_APP_ID}}
+      #     token: ${{secrets.FIREBASE_TOKEN}}
+      #     groups: loyaltystamp-beta
+      #     file: ${{steps.sign_app.outputs.signedReleaseFile}}
+
       # Run our tests
       # - run: flutter test
       # Analyze our Dart code
